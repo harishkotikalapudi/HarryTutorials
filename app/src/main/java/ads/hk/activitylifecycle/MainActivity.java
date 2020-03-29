@@ -2,12 +2,14 @@ package ads.hk.activitylifecycle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
     
-    private static String TAG = "MainActivity";
+    private static String TAG = "MainActivityLifeCycle";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,5 +54,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         Log.d(TAG, "onDestroy: ");
+    }
+
+    public void startSecondActivity(View view) {
+        startActivity(new Intent(this,SecondActivty.class));
     }
 }
